@@ -1,5 +1,5 @@
-let first_digit = 5;
-let second_digit = 5;
+let first_digit = '';
+let second_digit = '';
 let sign = '+';
 
 
@@ -16,23 +16,38 @@ function divide(first_digit, second_digit) {
     return first_digit / second_digit;
 };
 
-function insert (num) {
+function insert(num) {
     document.form.text_view.value = document.form.text_view.value + num;
+};
+
+function clear(){
+    document.form.text_view.value = '';
 }
 
-let items = document.querySelectorAll('.item');
-items.forEach((item) => {
-    item.addEventListener('click', function(e) {
+let operator = document.querySelectorAll('.sign');
+operator.forEach((signs) => {
+    signs.addEventListener('click', function(e) {
+         clear();
         let el = e.target.textContent;
-        first_digit += el
-        console.log(first_digit)
+        sign = el;
         insert(el)
     })
+   
+
 })
+
+let items = document.querySelectorAll('.number');
+    items.forEach((item) => {
+        item.addEventListener('click', function(e) {
+            let el = Number(e.target.textContent);
+
+            first_digit += el
+            insert(el);
+        })
+    })
 
 function operate (first_digit, second_digit, sign) {
     if (sign === '+'){
         insert(add(first_digit, second_digit))
     }
 }
-operate(first_digit, second_digit, sign)
