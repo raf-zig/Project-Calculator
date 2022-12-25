@@ -56,7 +56,7 @@ input {
 
 .equal {
     grid-column: 4;
-    grid-row: 6/8;
+    grid-row: 4/8;
     background-color: rgb(179, 179, 174);
 }
 

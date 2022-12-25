@@ -4,7 +4,7 @@ let sign = '+';
 
 
 function add(first_digit, second_digit){
-    return first_digit + second_digit;
+    return (+first_digit) + (+second_digit);
 };
 function subtract(first_digit, second_digit) {
     return first_digit - second_digit;
@@ -41,7 +41,7 @@ operator.forEach((signs) => {
 let items = document.querySelectorAll('.number');
     items.forEach((item) => {
         item.addEventListener('click', function(e) {
-            let el = Number(e.target.textContent);
+            let el = e.target.textContent;
             second_digit += el;
             insert(el);
             console.log(second_digit)
