@@ -1,6 +1,6 @@
 let first_digit = '';
 let second_digit = '';
-let sign = '+';
+let sign = '';
 
 
 function add(first_digit, second_digit){
@@ -64,4 +64,17 @@ let equal = document.querySelector('.equal');
 equal.addEventListener('click', function() {
     clear();
     operate (first_digit, second_digit, sign);
+})
+
+let clear_button = document.querySelector('.erase');
+clear_button.addEventListener('click', function() {
+    clear();
+    first_digit = '';
+    second_digit = '';
+})
+
+let back = document.querySelector('.back');
+back.addEventListener('click', function() {
+    let exp = document.form.text_view.value;
+    document.form.text_view.value = exp.substring(0, exp.length -1);
 })
