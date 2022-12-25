@@ -1,6 +1,6 @@
-let first_digit = '';
-let second_digit = '';
-
+let first_digit = 5;
+let second_digit = 5;
+let sign = '+';
 
 
 function add(first_digit, second_digit){
@@ -30,4 +30,9 @@ items.forEach((item) => {
     })
 })
 
-
+function operate (first_digit, second_digit, sign) {
+    if (sign === '+'){
+        insert(add(first_digit, second_digit))
+    }
+}
+operate(first_digit, second_digit, sign)
