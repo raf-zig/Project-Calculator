@@ -41,7 +41,7 @@ operator.forEach((signs) => {
 let items = document.querySelectorAll('.number');
     items.forEach((item) => {
         item.addEventListener('click', function(e) {
-            let el = e.target.textContent;
+            let el = Number(e.target.textContent);
             second_digit += el;
             insert(el);
             console.log(second_digit)
@@ -59,3 +59,9 @@ function operate (first_digit, second_digit, sign) {
         insert(divide(first_digit, second_digit)); 
     }
 }
+
+let equal = document.querySelector('.equal');
+equal.addEventListener('click', function() {
+    clear();
+    operate (first_digit, second_digit, sign);
+})
